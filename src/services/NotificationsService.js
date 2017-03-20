@@ -1,30 +1,30 @@
 'use strict';
 
 class NotificationsService {
-	static sub(eventName, cb) {
-		if (!this.events) {
-			this.events = {};
-		}
+    static sub(eventName, cb) {
+        if (!this.events) {
+            this.events = {};
+        }
 
-		if (!this.events[eventName]) {
-			this.events[eventName] = [];
-		}
+        if (!this.events[eventName]) {
+            this.events[eventName] = [];
+        }
 
-		this.events[eventName].push(cb);
-	}
+        this.events[eventName].push(cb);
+    }
 
 
-	static pub(eventName, obj) {
-		for(let k in this.events) {
-			if (k === eventName) {
-				this.events[k].map(cb => {
-					cb(obj);
-				});
+    static pub(eventName, obj) {
+        for(let k in this.events) {
+            if (k === eventName) {
+                this.events[k].map(cb => {
+                    cb(obj);
+                });
 
-				break;
-			}
-		}
-	}
+                break;
+            }
+        }
+    }
 }
 
-export default NotificationsService;	
+export default NotificationsService;    
