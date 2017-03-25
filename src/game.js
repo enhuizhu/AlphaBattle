@@ -3,6 +3,7 @@
 import _ from 'lodash';
 import lettersService from './services/LettersService';
 import notificationsService from './services/NotificationsService';
+import soundService from './services/SoundService';
 import bullet from './components/Bullet';
 import events from './constants/events';
 
@@ -14,7 +15,7 @@ class Game {
         this.ctx = this.canvas.getContext('2d');
         this.setCanvasSize(width, height);
         this.children = [];
-        this.numberOfLettersInGroup = 5;
+        this.numberOfLettersInGroup = 3;
         this.generateLetters();
         this.setEvents();
     }
@@ -28,6 +29,8 @@ class Game {
     }
 
     onCollision(objs) {
+        soundService.play('explosion');
+
         objs.map(obj => {
             this.destoryChild(obj);
         });

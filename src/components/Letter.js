@@ -11,6 +11,7 @@ class Letter extends gameChild {
         this.y = y;
         this.str = str;
         this.textConfig = config;
+        this.speed = 0.5;
     }
 
     setFontStyle(config) {
@@ -25,7 +26,7 @@ class Letter extends gameChild {
         }
 
         this.setFontStyle(this.textConfig);
-        this.y ++;
+        this.y += this.speed;
         this.ctx.fillText(this.str, this.x, this.y);
     }
 }
