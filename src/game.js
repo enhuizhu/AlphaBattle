@@ -3,7 +3,7 @@
 import _ from 'lodash';
 import lettersService from './services/LettersService';
 import notificationsService from './services/NotificationsService';
-import soundService from './services/SoundService';
+import soundService from './services/soundService';
 import bullet from './components/Bullet';
 import events from './constants/events';
 

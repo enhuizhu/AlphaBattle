@@ -1,6 +1,6 @@
 'use strict';
 
-import gameChild from '../common/gameChild';
+import gameChild from '../common/GameChild';
 import notificationsService from '../services/NotificationsService';
 import events from '../constants/events';
 
